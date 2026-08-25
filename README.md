@@ -5,6 +5,7 @@ into initiatives, and Pincer's agent — reachable by `@`-mention, DM, or Slack'
 assistant split-view — helps draft and edit goals, log metric updates, nudge
 owners for weekly check-ins, and narrate weekly / start / end goal summaries.
 
+[![CI](https://github.com/avinoth/pincer/actions/workflows/ci.yml/badge.svg)](https://github.com/avinoth/pincer/actions/workflows/ci.yml)
 ![Ruby](https://img.shields.io/badge/Ruby-4.0-CC342D?logo=ruby&logoColor=white)
 ![Rails](https://img.shields.io/badge/Rails-8.1-CC0000?logo=rubyonrails&logoColor=white)
 ![Tests](https://img.shields.io/badge/RSpec-110%20spec%20files-43A047)
