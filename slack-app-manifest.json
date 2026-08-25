@@ -1,0 +1,76 @@
+{
+    "display_information": {
+        "name": "Pincer",
+        "description": "The AI partner that runs your OKRs in Slack. Tracks goals, chases updates, keeps everything current.",
+        "background_color": "#1a1a1a"
+    },
+    "features": {
+        "bot_user": {
+            "display_name": "pincer",
+            "always_online": true
+        },
+        "app_home": {
+            "home_tab_enabled": false,
+            "messages_tab_enabled": true,
+            "messages_tab_read_only_enabled": false
+        },
+        "agent_view": {
+            "agent_description": "The AI partner that runs your OKRs in Slack. Tracks goals, chases updates, keeps everything current.",
+            "suggested_prompts": [
+                {
+                    "title": "Draft a new goal",
+                    "message": "Help me draft a new goal for this quarter."
+                },
+                {
+                    "title": "Check on my Goals",
+                    "message": "Give me a status update on my current goals."
+                }
+            ]
+        }
+    },
+    "oauth_config": {
+        "redirect_urls": [
+            "https://YOUR_PUBLIC_URL/slack/setup"
+        ],
+        "scopes": {
+            "bot": [
+                "app_mentions:read",
+                "assistant:write",
+                "channels:read",
+                "chat:write",
+                "chat:write.customize",
+                "chat:write.public",
+                "groups:read",
+                "groups:write",
+                "im:history",
+                "im:write",
+                "team:read",
+                "users:read",
+                "users:read.email",
+                "mpim:history"
+            ]
+        },
+        "pkce_enabled": false
+    },
+    "settings": {
+        "event_subscriptions": {
+            "request_url": "https://YOUR_PUBLIC_URL/slack/events",
+            "bot_events": [
+                "app_mention",
+                "assistant_thread_started",
+                "assistant_thread_context_changed",
+                "message.im",
+                "message.mpim",
+                "team_join"
+            ]
+        },
+        "interactivity": {
+            "is_enabled": true,
+            "request_url": "https://YOUR_PUBLIC_URL/slack/events"
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": false,
+        "token_rotation_enabled": true,
+        "is_mcp_enabled": false
+    }
+}

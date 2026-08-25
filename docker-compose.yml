@@ -1,0 +1,24 @@
+# Local development dependencies for the Pincer API.
+# `docker compose up -d` starts Postgres; then `bin/setup` prepares the app.
+# If host port 5432 is already taken (e.g. a local Postgres), change the left
+# side of the port mapping below and set POSTGRES_PORT in your .env to match.
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: pincer
+      POSTGRES_PASSWORD: pincer
+      POSTGRES_DB: pincer_development
+    ports:
+      - "5432:5432"
+    volumes:
+      - pincer_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pincer"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pincer_pg:
