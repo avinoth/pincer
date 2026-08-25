@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "members": [
+    {
+      "id": "U00000000",
+      "name": "jordan",
+      "real_name": "jordan",
+      "deleted": false,
+      "is_bot": false,
+      "tz": "Asia/Kolkata",
+      "profile": {
+        "email": "owner@example.com",
+        "real_name": "jordan",
+        "image_24": "https://example.com/24.png",
+        "image_32": "https://example.com/32.png",
+        "image_48": "https://example.com/48.png",
+        "image_72": "https://example.com/72.png",
+        "image_192": "https://example.com/192.png",
+        "image_512": "https://example.com/512.png"
+      }
+    },
+    {
+      "id": "U000BOT",
+      "name": "slackbot",
+      "real_name": "Slackbot",
+      "deleted": false,
+      "is_bot": true,
+      "tz": "America/Los_Angeles",
+      "profile": { "email": null }
+    },
+    {
+      "id": "U000DEL",
+      "name": "gone",
+      "real_name": "Gone User",
+      "deleted": true,
+      "is_bot": false,
+      "tz": "UTC",
+      "profile": { "email": "gone@example.com" }
+    }
+  ],
+  "response_metadata": { "next_cursor": "" }
+}

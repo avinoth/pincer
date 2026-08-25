@@ -1,0 +1,2 @@
+web: bin/rails server -p ${PORT:-3001}
+worker: bundle exec good_job start
