@@ -12,9 +12,9 @@ owners for weekly check-ins, and narrate weekly / start / end goal summaries.
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 > This is the Rails API — the agent, the Slack integration, the domain model,
-> and the background jobs. The deployment config and
-> the web frontend are intentionally out of scope, but the app boots and the
-> full test suite runs locally with nothing but Postgres.
+> and the background jobs. The web frontend lives elsewhere; the app boots, the
+> full test suite runs locally with nothing but Postgres, and a generic Docker
+> Compose deployment is included.
 
 <!--
   Screenshots slot — drop a real Slack thread here when available:
@@ -153,6 +153,20 @@ bin/ci                # RuboCop + Brakeman + bundler-audit + specs (what CI runs
 
 CI (`.github/workflows/ci.yml`) runs the security scan, dependency audit, lint, and
 the suite against a Postgres service on every push.
+
+## Deployment
+
+The app ships a production `Dockerfile` and a platform-agnostic
+[`docker-compose.prod.yml`](docker-compose.prod.yml) — web, a GoodJob worker, and
+Postgres — runnable on any Docker host with no vendor lock-in:
+
+```bash
+RAILS_MASTER_KEY=$(cat config/master.key) \
+  docker compose -f docker-compose.prod.yml up -d --build
+```
+
+The web container migrates the database on boot; front it with a TLS-terminating
+reverse proxy and supply the runtime vars from `.env.example`.
 
 ## Project structure
 
